@@ -1,0 +1,31 @@
+* { box-sizing: border-box; }
+body { width: 360px; margin: 0; padding: 14px; max-height: 580px; overflow-y: auto; font: 14px/1.5 system-ui, sans-serif; color: #182b3a; background: #fff; }
+h1 { font-size: 19px; line-height: 1.3; margin: 0; }
+p { margin: 8px 0; color: #526475; }
+header p, .hint { font-size: 12px; line-height: 1.5; }
+header { margin-bottom: 10px; }
+label { display: block; font-size: 13px; font-weight: 600; }
+input, select { width: 100%; min-width: 0; padding: 9px 10px; border: 1px solid #9babb8; border-radius: 6px; background: #fff; color: inherit; font: inherit; }
+input[readonly] { background: #f4f7fa; font-size: 16px; font-weight: 600; text-align: center; }
+input:focus-visible, select:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #297cb5; outline-offset: 2px; }
+.language-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.language-row select { width: 130px; padding: 6px 8px; font-size: 13px; }
+.mode-section { margin-top: 12px; }
+.mode-section select { margin-top: 6px; font-size: 13px; }
+.shortcut-section { margin-top: 12px; padding-top: 12px; border-top: 1px solid #d7dfe5; }
+.field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+button { width: 100%; margin-top: 4px; padding: 8px 12px; border: 1px solid #9babb8; border-radius: 6px; background: #f4f7fa; color: #182b3a; font: inherit; cursor: pointer; }
+button:hover { background: #e7eef5; border-color: #6d879d; }
+#status { margin: 6px 0; min-height: 18px; color: #136938; font-size: 12px; }
+details { border: 1px solid #d7dfe5; border-radius: 6px; margin-top: 10px; }
+summary { padding: 10px 12px; cursor: pointer; font-weight: 600; }
+.advanced-content { padding: 0 12px 12px; }
+.percent-row { display: flex; align-items: center; gap: 6px; }
+.percent-row input { flex: 1; }
+.pagination-settings, .update-settings { border-top: 1px solid #d7dfe5; margin-top: 12px; padding-top: 12px; }
+button:disabled { cursor: wait; opacity: 0.65; }
+#update-status:empty { display: none; }
+.checkbox-row { display: flex; align-items: center; gap: 8px; }
+.checkbox-row input { width: 16px; height: 16px; margin: 0; accent-color: #297cb5; }
+details p:last-child { margin-bottom: 0; }

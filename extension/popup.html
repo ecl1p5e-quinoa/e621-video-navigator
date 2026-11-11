@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Video Navigation Settings</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <header>
+    <h1 data-i18n="heading">Search Video Navigation</h1>
+    <p data-i18n="intro">Follow the search-page order and seek by percentage.</p>
+  </header>
+  <div class="language-row">
+    <label for="language" data-i18n="language">Language / 语言</label>
+    <select id="language"><option value="zh">简体中文</option><option value="en" selected>English</option></select>
+  </div>
+  <section class="mode-section">
+    <label for="end-mode" data-i18n="endMode">When a video ends</label>
+    <select id="end-mode">
+      <option value="loop" data-i18n="modeLoop">Replay the current video (default)</option>
+      <option value="next" data-i18n="modeNext">Automatically play the next video</option>
+    </select>
+    <p class="hint" data-i18n="modeHint">Auto-next keeps fullscreen. Enable pagination in Advanced settings to continue across pages.</p>
+  </section>
+  <section class="shortcut-section">
+    <div class="field-grid">
+      <div class="field">
+        <label for="shortcut" data-i18n="nextKey">Next video shortcut</label>
+        <input id="shortcut" type="text" readonly aria-describedby="hint">
+      </div>
+      <div class="field">
+        <label for="previous-shortcut" data-i18n="previousKey">Previous video shortcut</label>
+        <input id="previous-shortcut" type="text" readonly aria-describedby="hint">
+      </div>
+      <div class="field">
+        <label for="seek-shortcut" data-i18n="seekKey">Seek forward shortcut</label>
+        <input id="seek-shortcut" type="text" readonly aria-describedby="hint">
+      </div>
+      <div class="field">
+        <label for="rewind-shortcut" data-i18n="rewindKey">Seek backward shortcut</label>
+        <input id="rewind-shortcut" type="text" readonly aria-describedby="hint">
+      </div>
+    </div>
+    <p id="hint" class="hint" data-i18n="keyHint">Click a field, then press a key or combination. Browser-reserved shortcuts may not work.</p>
+    <button id="reset" type="button" data-i18n="resetControls">Reset shortcuts and seek steps</button>
+  </section>
+  <p id="status" role="status" aria-live="polite"></p>
+  <details id="advanced-settings">
+    <summary data-i18n="advanced">Advanced settings</summary>
+    <div class="advanced-content">
+      <div class="field-grid">
+        <div class="field">
+          <label for="seek-percent" data-i18n="seekPercent">Forward step (% of duration)</label>
+          <div class="percent-row"><input id="seek-percent" type="number" min="0.1" max="100" step="any" aria-describedby="percent-hint"><span aria-hidden="true">%</span></div>
+        </div>
+        <div class="field">
+          <label for="rewind-percent" data-i18n="rewindPercent">Backward step (% of duration)</label>
+          <div class="percent-row"><input id="rewind-percent" type="number" min="0.1" max="100" step="any" aria-describedby="percent-hint"><span aria-hidden="true">%</span></div>
+        </div>
+      </div>
+      <p id="percent-hint" class="hint" data-i18n="seekHint">For a 100-second video, 20% moves 20 seconds. Seeking stops at the start or end.</p>
+      <div class="pagination-settings">
+        <label class="checkbox-row" for="auto-page"><input id="auto-page" type="checkbox" aria-describedby="auto-page-hint"><span data-i18n="autoPage">Automatic pagination</span></label>
+        <p id="auto-page-hint" class="hint" data-i18n="autoPageHint">When enabled, the Next video shortcut continues to the first video on the next page. Auto-next mode also turns the page when playback ends. Keeps fullscreen. Off by default.</p>
+      </div>
+      <p class="hint" data-i18n="installHint">After installing or updating, refresh the search page, then open a video. Ctrl-click and middle-click work too.</p>
+      <div class="update-settings">
+        <p id="current-version" class="hint"></p>
+        <button id="apply-update" type="button" data-i18n="applyUpdate" aria-describedby="update-hint">Apply local update</button>
+        <p id="update-hint" class="hint" data-i18n="updateHint">Replace the files in the existing extension folder first, then click here. Reloads the extension and all open e621 search, favorites and video pages, interrupting playback. Keeps settings; does not download updates.</p>
+        <p id="update-status" class="hint" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </details>
+  <script src="i18n.js"></script><script src="core.js"></script><script src="popup.js"></script>
+</body>
+</html>

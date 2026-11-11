@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "e621 搜索页视频导航",
+  "version": "1.8.1",
+  "description": "在视频详情页按自定义快捷键，打开来源搜索页中的下一个视频。",
+  "permissions": ["storage"],
+  "host_permissions": ["https://e621.net/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "视频导航快捷键" },
+  "content_scripts": [{
+    "matches": ["https://e621.net/posts*", "https://e621.net/favorites*"],
+    "js": ["i18n.js", "core.js", "content.js"],
+    "run_at": "document_idle"
+  }]
+}
